@@ -13,7 +13,10 @@
 - ✅ ADR-001: Refresh token strategy decided (Cookie + Body)
 - ✅ ADR-002: File upload strategy decided (Local Storage + Static Resource Serving)
 - ✅ AI workflow setup (.claude/commands/)
+- ✅ Phase 0: Foundation (Base Exceptions, ExceptionHandler, ApiResponse, SecurityConfig, JwtConfig)
 - ✅ Phase 1: Permission module implemented (CRUD, tests, Context)
+- ✅ Phase 2: Role module implemented (CRUD, tests, Context)
+- ✅ Phase 3: Company module implemented (CRUD, tests, Context)
 
 ## In Progress
 _None._
@@ -25,28 +28,23 @@ _None._
 _None._
 
 ## Next Tasks
-1. **[P0]** Base exception classes (AppException, ResourceNotFoundException, InvalidRequestException)
-2. **[P0]** GlobalExceptionHandler (@RestControllerAdvice)
-3. **[P0]** ApiResponse wrapper (record)
-4. **[P0]** SecurityConfig cơ bản (permitAll tạm — chưa bật JWT)
-5. **[P0]** JwtConfig (JwtEncoder, JwtDecoder — chuẩn bị sẵn, chưa enforce)
-6. **[P1]** Company CRUD + test
+1. **[P0]** User CRUD + unit test + integration test + CONTEXT.md
 
 ## Milestones
 
 ### Phase 0 — Foundation
-- [ ] Base exception classes (AppException, ResourceNotFoundException, InvalidRequestException)
-- [ ] GlobalExceptionHandler
-- [ ] ApiResponse wrapper
-- [ ] SecurityConfig (permitAll tạm thời)
-- [ ] JwtConfig (JwtEncoder, JwtDecoder — chuẩn bị sẵn)
+- [x] Base exception classes (AppException, ResourceNotFoundException, DuplicateResourceException)
+- [x] GlobalExceptionHandler
+- [x] ApiResponse wrapper
+- [x] SecurityConfig (permitAll tạm thời)
+- [x] JwtConfig (JwtEncoder, JwtDecoder — chuẩn bị sẵn)
 
 ### Phase 1 — Independent Entities
 - [x] Permission CRUD + unit test + integration test + CONTEXT.md
-- [ ] Company CRUD + unit test + integration test + CONTEXT.md
+- [x] Company CRUD + unit test + integration test + CONTEXT.md
 
 ### Phase 2 — Role (depends on Permission)
-- [ ] Role CRUD + ManyToMany Permission + test + CONTEXT.md
+- [x] Role CRUD + ManyToMany Permission + test + CONTEXT.md
 
 ### Phase 3 — User (depends on Role + Company)
 - [ ] User CRUD + ManyToOne Company + ManyToMany Role + test + CONTEXT.md
